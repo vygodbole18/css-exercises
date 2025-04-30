@@ -2,26 +2,32 @@
 
 html, body {
   height: 100%;
-}
-
-body {
-  font-family: Roboto, sans-serif;
   margin: 0;
+  font-family: Roboto, sans-serif;
   background: #aaa;
   color: #333;
-  /* I'll give you this one for free lol */
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
+/* Modal container */
 .modal {
   background: white;
   width: 480px;
   border-radius: 10px;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 24px;
 }
 
+/* Icon and main content side-by-side */
+.content {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Circular icon on the left */
 .icon {
   color: royalblue;
   font-size: 26px;
@@ -33,13 +39,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
+/* Right side content (header + text + buttons) */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Top row: header on the left, close button on the right */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header text */
+.header {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Close (×) button */
 .close-button {
   background: #eee;
   border-radius: 50%;
   color: #888;
-  font-weight: 400;
   font-size: 16px;
   height: 24px;
   width: 24px;
@@ -48,20 +76,37 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+  cursor: pointer;
 }
 
+/* Paragraph text */
+.text {
+  line-height: 1.5;
+}
+
+/* Continue + Cancel buttons aligned horizontally */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Shared button styles */
 button {
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
 }
 
+/* Continue button */
 button.continue {
   background: royalblue;
   border: 1px solid royalblue;
   color: white;
 }
 
+/* Cancel button */
 button.cancel {
   background: white;
   border: 1px solid #ddd;
